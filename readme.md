@@ -27,7 +27,7 @@ Es können drei verschiedene Angriffe mithilfe der Skripte durchgeführt werden.
 Der Wert des Arguments --max-stream-data muss kleiner sein als die zu übertragenden Antwortdaten, damit der Angriff ausgeführt werden kann.
 
 ``` 
-python3 http_attacks.py https://localhost:4433/ --max-stream-data 1024
+python3 flowcontrol_attack.py https://localhost:4433/ --max-stream-data 1024
 ``` 
 
 In Wireshark kann festgestellt werden, ob zusätzliche DATA Frames gesendet wurden. Die Pakete sind mit TLS verschlüsselt und müssen vorher entschlüsselt werden. Dazu kann die Log-Funktion des Skripts aktiviert und in Wireshark eingebunden werden.
@@ -49,7 +49,7 @@ python3 http_attacks.py https://localhost:4433/ -t <1-5>
 Das Argument --offset-test startet drei Tests mit unterschiedlichen Offsets für die Länge eines DATA Frames.
 
 ``` 
-python3 flowcontrol_attack.py https://localhost:4433/ --offset-test
+python3 http_attacks.py https://localhost:4433/ --offset-test
 ``` 
 
 
@@ -91,7 +91,7 @@ python3 http_attacks.py https://localhost:4433/ --max-stream-data 1024
 In Wireshark, it can be determined whether additional DATA frames were sent. The packets are encrypted with TLS and must be decrypted beforehand. For this purpose, the log function of the script can be activated and included in Wireshark.
 
 ``` 
-python3 http_attacks.py https://localhost:4433/ --max-stream-data 1024 -l keylogfile
+python3 flowcontrol_attack.py https://localhost:4433/ --max-stream-data 1024 -l keylogfile
 ``` 
 
 ### State Manipulation
@@ -107,5 +107,5 @@ python3 http_attacks.py https://localhost:4433/ -t <1-5>
 The --offset-test argument starts three tests with different offsets for the length of a DATA frame.
 
 ``` 
-python3 flowcontrol_attack.py https://localhost:4433/ --offset-test
+python3 http_attacks.py https://localhost:4433/ --offset-test
 ``` 
